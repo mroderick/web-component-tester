@@ -1,20 +1,12 @@
-sudo: required
+sudo: false
 dist: trusty
+language: node_js
 addons:
   firefox: latest
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-  sauce_connect: true
-language: node_js
+  chrome: stable
 node_js:
-  - node
+  - stable
+  - '8'
   - '6'
 script:
   - xvfb-run npm test
-env:
-  global:
-    - secure: erPJ5uPudGD1E05tCYCWk/sdSFYL5lK/7rzUPgijC27XtuTF0tvvLKJkId2sCzPb40yCBHhEv0UIVEnYzY4feCpx5kUqm+Iu6DHWDn4xJP+gRnCNMCJp0QcUFU3JDNGK07FG2mKUkxD8EHxYjATL7tnN9HduNxaornVapkgRu70=
-    - secure: WkrrR4HpJr1jD86mOegdumhLqI5M1skh2j1iX0AYF41oPym4CIRHvFA8REY1f12OlPXfXCVZL8+7nyuoM6NEyddEDzZZXmgAJVFkFbP++veVjXGVAWsr2++n5lzcUfvhIuYTxTqSTpnA6E3DhoJdXBxt0FBTFxYA3yXSIfJsu2k=
